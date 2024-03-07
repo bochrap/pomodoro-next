@@ -25,11 +25,27 @@ export default function TimerDisplay({ count, setCount }) {
 
   return (
     <div id="timer">
-      <span>{mt}</span>
-      <span>{ms}</span>
+      <div className="digit">
+        <button className="digitBtn">⬆</button>
+        <span>{mt}</span>
+        <button className="digitBtn">⬇</button>
+      </div>
+      <div className="digit">
+        <button className="digitBtn">⬆</button>
+        <span>{ms}</span>
+        <button className="digitBtn">⬇</button>
+      </div>
       <span>:</span>
-      <span>{st}</span>
-      <span>{count}</span>
+      <div className="digit">
+        <button className="digitBtn">⬆</button>
+        <span>{st}</span>
+        <button className="digitBtn">⬇</button>
+      </div>
+      <div className="digit">
+        <button className="digitBtn">⬆</button>
+        <span>{count}</span>
+        <button className="digitBtn">⬇</button>
+      </div>
     </div>
   );
 }

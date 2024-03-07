@@ -1,0 +1,15 @@
+#timer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.digit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.digitBtn {
+  font-size: 2rem;
+}
