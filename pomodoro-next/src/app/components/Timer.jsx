@@ -32,11 +32,15 @@ export default function Timer() {
   }, [run, btnLabel]);
 
   return (
-    <div>
-      Count: {count}
-      <button onClick={resetTimer}>RESET</button>
-      <button onClick={startTimer}>{btnLabel}</button>
-      <p>{run}</p>
+    <div id="pomodoro">
+      <div className="controls">
+        <button className="controlBtn" onClick={startTimer}>
+          {btnLabel}
+        </button>
+        <button className="controlBtn" onClick={resetTimer}>
+          RESET
+        </button>
+      </div>
       <TimerDisplay count={count} setCount={setCount} />
     </div>
   );

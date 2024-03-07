@@ -1,3 +1,15 @@
+#pomodoro {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 #timer {
   display: flex;
   align-items: center;
