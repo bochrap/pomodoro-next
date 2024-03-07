@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import TimerDisplay from "./TimerDisplay";
 
 export default function Timer() {
   const [count, setCount] = useState(0);
@@ -36,6 +37,7 @@ export default function Timer() {
       <button onClick={resetTimer}>RESET</button>
       <button onClick={startTimer}>{btnLabel}</button>
       <p>{run}</p>
+      <TimerDisplay count={count} setCount={setCount} />
     </div>
   );
 }
