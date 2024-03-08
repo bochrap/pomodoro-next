@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 export default function TimerDisplay({ count, countSet, playAudio, startTimer }) {
-  const [min_1, min_1Set] = useState(1);
+  const [min_1, min_1Set] = useState(0);
   const [min_2, min_2Set] = useState(1);
   const [sec_1, sec_1Set] = useState(2);
   const [sec_2, sec_2Set] = useState(0);
@@ -25,31 +25,11 @@ export default function TimerDisplay({ count, countSet, playAudio, startTimer })
     }
   }
 
-  // useEffect(() => {
-  //   if ((sec_1 && min_2 && min_1 && count) === 0) {
-  //     console.log("BEEP BEEP MOTHERFUCKER");
-  //   }
-  //   {
-  //     if (count > 9) {
-  //       sec_1Set(sec_1 + 1);
-  //       countSet(0);
-  //     }
-  //     if (sec_1 > 5) {
-  //       sec_1Set(0);
-  //       min_2Set(min_2 + 1);
-  //     }
-
-  //     if (min_2 > 9) {
-  //       min_2Set(0);
-  //       min_1Set(min_1 + 1);
-  //     }
-  //   }
-  // }, [count, sec_2, sec_1, min_2, min_1]);
-
   useEffect(() => {
     if (sec_1 === 0 && count === 0 && min_1 === 0 && min_2 === 0) {
       console.log("BEEP BEEP MOTHERFUCKER");
       startTimer();
+      playAudio();
     }
     {
       if (count < 0) {
