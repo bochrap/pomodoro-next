@@ -4,12 +4,18 @@ import { useState, useEffect } from "react";
 import TimerDisplay from "./TimerDisplay";
 
 export default function Timer() {
-  const [count, setCount] = useState(0);
+  const [count, countSet] = useState(0);
   const [run, setRun] = useState(0);
   const [btnLabel, setBtnLabel] = useState("START");
+  const soundfile = "/sound.wav";
+
+  const playAudio = () => {
+    const audio = new Audio(soundfile);
+    audio.play();
+  };
 
   function resetTimer() {
-    setCount(0);
+    countSet(0);
   }
   function startTimer() {
     if (run === 0) {
@@ -23,8 +29,8 @@ export default function Timer() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCount((currentCount) => currentCount + run);
-    }, 1000);
+      countSet((currentCount) => currentCount - run);
+    }, 10);
 
     return () => {
       clearInterval(interval);
@@ -41,7 +47,7 @@ export default function Timer() {
           RESET
         </button>
       </div>
-      <TimerDisplay count={count} setCount={setCount} />
+      <TimerDisplay count={count} countSet={countSet} playAudio={playAudio} startTimer={startTimer} />
     </div>
   );
 }
